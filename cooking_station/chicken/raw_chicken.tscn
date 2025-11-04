@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://drytdagqjk6me"]
+
+[ext_resource type="Texture2D" uid="uid://bbhhxf7cy5i6o" path="res://cooking_station/assets/raw chicken.png" id="1_nnmwc"]
+[ext_resource type="Script" uid="uid://m3r7615xxf6q" path="res://cooking_station/draggable.gd" id="2_ms8ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
+size = Vector2(126.92719, 104.620995)
+
+[node name="draggable" type="Sprite2D"]
+scale = Vector2(1.609375, 1.7109375)
+texture = ExtResource("1_nnmwc")
+script = ExtResource("2_ms8ui")
+item_type = "chicken_uncooked"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.1577665, 0.8767121)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_dtr5r")

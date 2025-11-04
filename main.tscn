@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://44vpewpbs465"]
+[gd_scene load_steps=26 format=3 uid="uid://44vpewpbs465"]
 
 [ext_resource type="PackedScene" uid="uid://da2oisa3a1chr" path="res://orders/order_station.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bheb7evjpspe6" path="res://drinks_station/drinks_station.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bspg3f7073uow" path="res://build_station/build_station.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://iosb2w0fsbmo" path="res://cooking_station/cook_station.tscn" id="3_vivmo"]
 [ext_resource type="Script" uid="uid://8talxbms7gug" path="res://tab_bar.gd" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://clpkvhsvfc7jn" path="res://assets/Side Menu.png" id="5_4c57u"]
 [ext_resource type="Texture2D" uid="uid://b5a54r50ahgh8" path="res://assets/cook_icon.png" id="6_4c57u"]
@@ -57,24 +58,28 @@ theme_override_colors/drop_mark_color = Color(0.92977464, 0.5011101, 0, 1)
 theme_override_colors/font_selected_color = Color(0.970239, 0.94062257, 0, 1)
 theme_override_constants/tab_separation = 50
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 tabs_position = 1
 clip_tabs = false
 tabs_visible = false
 all_tabs_in_front = true
 
 [node name="Order Station" parent="TabContainer" instance=ExtResource("1_0xm2m")]
+visible = false
 layout_mode = 2
 
-[node name="Build Station" parent="TabContainer" instance=ExtResource("3_lquwl")]
+[node name="Cooking Station" parent="TabContainer" instance=ExtResource("3_vivmo")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="Build Station" parent="TabContainer" instance=ExtResource("3_lquwl")]
+layout_mode = 2
+
 [node name="DrinksStation" parent="TabContainer" instance=ExtResource("3_h2yge")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="UI Layer" type="CanvasLayer" parent="."]
 

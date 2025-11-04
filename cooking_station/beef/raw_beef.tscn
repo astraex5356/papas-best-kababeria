@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxcm0f7pr43q5"]
+
+[ext_resource type="Texture2D" uid="uid://cumbe0to4my4b" path="res://cooking_station/assets/raw beef.png" id="1_sdcer"]
+[ext_resource type="Script" uid="uid://m3r7615xxf6q" path="res://cooking_station/draggable.gd" id="2_6o721"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
+size = Vector2(87.47089, 127.06619)
+
+[node name="draggable" type="Sprite2D"]
+scale = Vector2(1.609375, 1.7109375)
+texture = ExtResource("1_sdcer")
+script = ExtResource("2_6o721")
+item_type = "beef_uncooked"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.973301, -0.40981978)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_dtr5r")

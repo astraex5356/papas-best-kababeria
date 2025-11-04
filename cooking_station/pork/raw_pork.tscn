@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://313cwmveoi8o"]
+
+[ext_resource type="Texture2D" uid="uid://p6e2yjsg707x" path="res://cooking_station/assets/raw pork.png" id="1_xf4py"]
+[ext_resource type="Script" uid="uid://m3r7615xxf6q" path="res://cooking_station/draggable.gd" id="2_v1tkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
+size = Vector2(204.39459, 196.51424)
+
+[node name="draggable" type="Sprite2D"]
+position = Vector2(-1, -0.99999714)
+scale = Vector2(1.5534054, 1.5585939)
+texture = ExtResource("1_xf4py")
+script = ExtResource("2_v1tkh")
+item_type = "pork_uncooked"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.4459609, 0.5498475)
+scale = Vector2(1, 1.0000005)
+shape = SubResource("RectangleShape2D_dtr5r")

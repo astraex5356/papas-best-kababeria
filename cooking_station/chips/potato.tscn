@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3658trpgufsd"]
+
+[ext_resource type="Texture2D" uid="uid://dktr4paxv3lfd" path="res://cooking_station/assets/potato.png" id="1_rx63k"]
+[ext_resource type="Script" uid="uid://m3r7615xxf6q" path="res://cooking_station/draggable.gd" id="2_ybd78"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
+size = Vector2(122.999985, 80.24675)
+
+[node name="draggable" type="Sprite2D"]
+position = Vector2(0, -4.000002)
+scale = Vector2(1, 0.946)
+texture = ExtResource("1_rx63k")
+script = ExtResource("2_ybd78")
+item_type = "potato"
+metadata/item_type = "potato"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.000002, 3.8146973e-06)
+scale = Vector2(1, 1.0000006)
+shape = SubResource("RectangleShape2D_dtr5r")
