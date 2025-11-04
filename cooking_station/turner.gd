@@ -27,7 +27,7 @@ func _ready() -> void:
 	accepts.append("chicken_uncooked")
 	accepts.append("pork_uncooked")
 
-func _on_item_dropped(item: Node) -> String:
+func _on_item_dropped(item: Draggable) -> String:
 	print(item.item_type, "            ", current_item)
 	
 	if current_item != null:
@@ -41,38 +41,38 @@ func _on_item_dropped(item: Node) -> String:
 	current_item.visible = false
 	if current_item.item_type == "lamb_uncooked":
 		type = "lamb_uncooked"
-		_spawn_meat(Vector2(169, 209))
-		sprite.texture = load("res://lamb_wait.png")
+		_spawn_meat(item.start_position)
+		sprite.texture = load("res://cooking_station/assets/lamb_wait.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		await get_tree().create_timer(TIME).timeout
-		sprite.texture = load("res://lamb_ready.png")
+		sprite.texture = load("res://cooking_station/assets/lamb_ready.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		type = "lamb"
 	elif current_item.item_type == "beef_uncooked":
 		type = "beef_uncooked"
-		_spawn_meat(Vector2(96, 248))
-		sprite.texture = load("res://beef_wait.png")
+		_spawn_meat(item.start_position)
+		sprite.texture = load("res://cooking_station/assets/beef_wait.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		await get_tree().create_timer(TIME).timeout
-		sprite.texture = load("res://beef_ready.png")
+		sprite.texture = load("res://cooking_station/assets/beef_ready.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		type = "beef"
 	elif current_item.item_type == "chicken_uncooked":
 		type = "chicken_uncooked"
-		_spawn_meat(Vector2(32, 283))
-		sprite.texture = load("res://chicken_wait.png")
+		_spawn_meat(item.start_position)
+		sprite.texture = load("res://cooking_station/assets/chicken_wait.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		await get_tree().create_timer(TIME).timeout
-		sprite.texture = load("res://chicken_ready.png")
+		sprite.texture = load("res://cooking_station/assets/chicken_ready.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		type = "chicken"
 	elif current_item.item_type == "pork_uncooked":
 		type = "pork_uncooked"
-		_spawn_meat(Vector2(248, 172))
-		sprite.texture = load("res://pork_wait.png")
+		_spawn_meat(item.start_position)
+		sprite.texture = load("res://cooking_station/assets/pork_wait.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		await get_tree().create_timer(TIME).timeout
-		sprite.texture = load("res://pork_ready.png")
+		sprite.texture = load("res://cooking_station/assets/pork_ready.png")
 		sprite.scale = Vector2(0.55, 0.55)
 		type = "pork"
 	return type
@@ -80,6 +80,9 @@ func _on_item_dropped(item: Node) -> String:
 
 #function to click on meat turner and create meat piles
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		print("detected", click_count)
+	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		click_count = click_count + 1
 		if click_count % 2 == 0:
@@ -102,27 +105,18 @@ func _spawn_meat(spawn_position: Vector2):
 			new_meat = pork.instantiate()
 		elif type == "lamb_uncooked":
 			new_meat = uncooked_lamb.instantiate()
-			size = Vector2(0.774, 0.608)
 			angle = 33.4
 		elif type == "beef_uncooked":
 			new_meat = uncooked_beef.instantiate()
-			size = Vector2(0.7, 0.744)
 			angle = -40.8
 		elif type == "pork_uncooked":
 			new_meat = uncooked_pork.instantiate()
-			size = Vector2(0.459, 0.368)
 			angle = 33.4
 		else:
 			new_meat = uncooked_chicken.instantiate()
-			size = Vector2(0.641, 0.684)
 			angle = 40.8
 		get_tree().root.add_child(new_meat)
 		new_meat.global_position = spawn_position
 		if size != null:
 			new_meat.rotation_degrees = angle
 			new_meat.scale = size
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

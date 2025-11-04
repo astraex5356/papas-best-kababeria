@@ -17,6 +17,7 @@ offset_left = -2.0
 offset_top = 2.0
 offset_right = -2.0
 offset_bottom = 2.0
+mouse_filter = 2
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -45,22 +46,18 @@ accepts = Array[String](["beef_uncooked", "pork_uncooked", "chicken_uncooked", "
 [node name="lamb" parent="Node2D" instance=ExtResource("6_5vw27")]
 position = Vector2(234.00002, 446)
 rotation = 0.5829399
-scale = Vector2(1.645, 1)
 
 [node name="raw beef" parent="Node2D" instance=ExtResource("6_4c57u")]
 position = Vector2(138, 502)
 rotation = -0.71209425
-scale = Vector2(1, 1.063)
 
 [node name="raw chicken" parent="Node2D" instance=ExtResource("7_efxa6")]
 position = Vector2(49.999992, 566)
 rotation = 0.7120943
-scale = Vector2(1, 1)
 
 [node name="raw pork" parent="Node2D" instance=ExtResource("8_dg77c")]
 position = Vector2(346.00003, 382)
 rotation = 0.5829399
-scale = Vector2(0.7, 0.561)
 
 [node name="turner2" parent="Node2D" instance=ExtResource("5_272bh")]
 position = Vector2(1458, 462.00003)

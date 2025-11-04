@@ -6,9 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
 size = Vector2(87.47089, 127.06619)
 
-[node name="draggable" type="Sprite2D"]
-scale = Vector2(1.609375, 1.7109375)
-texture = ExtResource("1_sdcer")
+[node name="draggable" type="Area2D"]
 script = ExtResource("2_6o721")
 item_type = "beef_uncooked"
 
@@ -16,3 +14,6 @@ item_type = "beef_uncooked"
 position = Vector2(5.973301, -0.40981978)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_dtr5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sdcer")

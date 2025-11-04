@@ -4,16 +4,17 @@
 [ext_resource type="Script" uid="uid://m3r7615xxf6q" path="res://cooking_station/draggable.gd" id="2_hidjo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
-size = Vector2(120.997116, 91.58153)
+size = Vector2(96.96971, 63.999977)
 
-[node name="draggable" type="Sprite2D"]
-position = Vector2(6, -19)
-scale = Vector2(1.164, 1.026)
-texture = ExtResource("1_ov282")
+[node name="draggable" type="Area2D"]
+scale = Vector2(1.65, 1)
 script = ExtResource("2_hidjo")
 item_type = "lamb_uncooked"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.1546392, -0.9746585)
+position = Vector2(5.7798445e-07, 9.536743e-07)
 scale = Vector2(0.99999994, 1.0000004)
 shape = SubResource("RectangleShape2D_dtr5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ov282")

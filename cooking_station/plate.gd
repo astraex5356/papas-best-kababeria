@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func _on_item_dropped(item: Node) -> void:
 	current_item = item
+	
+	item.get_parent().remove_child(item)
+	item.add_child(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

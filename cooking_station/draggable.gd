@@ -1,4 +1,6 @@
-extends Sprite2D
+extends Area2D
+
+class_name Draggable
 
 @export var item_type: String = ""
 var dragging: bool = false
@@ -9,7 +11,7 @@ var start_position: Vector2 = Vector2.ZERO
 
 var first_use = true
 
-var meat_types = ["pork", "chicken", "lamb", "beef"]
+var meat_types = ["pork", "chicken", "beef", "lamb", "lamb_uncooked", "beef_uncooked", "chicken_uncooked", "pork_uncooked"]
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -17,23 +19,21 @@ func _ready() -> void:
 	if on_spawn_drag:
 		dragging = true
 		global_position = get_global_mouse_position()
+		
+func _process(_delta: float) -> void:
+	if dragging:
+		global_position = get_global_mouse_position() - drag_offset
 	
-func _input(event: InputEvent) -> void:
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			if texture:
-				var tex_size: Vector2 = texture.get_size() * global_scale
-				var rect := Rect2(global_position - tex_size * 0.5, tex_size)
-				if rect.has_point(event.position):
-					dragging = true
-					drag_offset = event.position - global_position
+			dragging = true
+			drag_offset = get_local_mouse_position()
+			start_position = global_position
 		else:
 			if dragging:
 				_try_drop()
 			dragging = false
-
-	elif event is InputEventMouseMotion and dragging:
-		global_position = event.position - drag_offset
 
 
 func _try_drop() -> void:

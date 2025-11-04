@@ -58,7 +58,7 @@ theme_override_colors/drop_mark_color = Color(0.92977464, 0.5011101, 0, 1)
 theme_override_colors/font_selected_color = Color(0.970239, 0.94062257, 0, 1)
 theme_override_constants/tab_separation = 50
 tab_alignment = 1
-current_tab = 2
+current_tab = 1
 tabs_position = 1
 clip_tabs = false
 tabs_visible = false
@@ -69,11 +69,11 @@ visible = false
 layout_mode = 2
 
 [node name="Cooking Station" parent="TabContainer" instance=ExtResource("3_vivmo")]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="Build Station" parent="TabContainer" instance=ExtResource("3_lquwl")]
+visible = false
 layout_mode = 2
 
 [node name="DrinksStation" parent="TabContainer" instance=ExtResource("3_h2yge")]

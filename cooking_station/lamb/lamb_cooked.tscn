@@ -6,10 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
 size = Vector2(308.8133, 181.44803)
 
-[node name="draggable" type="Sprite2D"]
-position = Vector2(0, -19)
+[node name="draggable" type="Area2D"]
 scale = Vector2(0.48424998, 0.5091875)
-texture = ExtResource("1_lbh17")
 script = ExtResource("2_quffh")
 item_type = "lamb"
 on_spawn_drag = true
@@ -18,3 +16,6 @@ on_spawn_drag = true
 position = Vector2(29.382744, 29.074654)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_dtr5r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lbh17")
