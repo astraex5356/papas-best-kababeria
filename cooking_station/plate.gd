@@ -1,4 +1,4 @@
-extends "res://drop_zone.gd"
+extends "res://cooking_station/drop_zone.gd"
 
 var current_item
 
@@ -72,6 +72,9 @@ func _on_click(_viewport, event, _shape_idx):
 		tween.finished.connect(send_other_screen)
 	
 func _on_input_event(_viewport, event, _shape_idx):
+	if state != State.ASSEMBLY:
+		return
+
 	var pressed = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
 	
 	if pressed:
