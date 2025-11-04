@@ -123,7 +123,7 @@ func _input_event(_viewport, event, _shape_idx):
 		tween.play()
 
 		tween.finished.connect(start_pouring)
-	elif is_pressed and state == State.Pour and beer_procress > 0 and drink_tap.value == 1 :
+	elif is_pressed and state == State.Pour and drink_tap.value == 1 :
 		moving = true
 		
 		rotation = 0

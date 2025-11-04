@@ -114,11 +114,6 @@ sauce_name = "mayo"
 position = Vector2(920, 152)
 shape = SubResource("RectangleShape2D_pf5kv")
 
-[node name="CookedToppingReciver" type="Node2D" parent="."]
-position = Vector2(0, 104)
-script = ExtResource("14_6oefc")
-positions = Array[Vector2]([Vector2(175, 150), Vector2(425, 150), Vector2(300, 350)])
-
 [node name="Wraps" type="Node2D" parent="."]
 position = Vector2(0, 104)
 script = ExtResource("1_8cbhs")
@@ -188,6 +183,11 @@ topping_type = "cucumber"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawners/CuecumberSpawner"]
 position = Vector2(108, 112)
 shape = SubResource("RectangleShape2D_5ptvn")
+
+[node name="CookedToppingReciver" type="Node2D" parent="."]
+position = Vector2(0, 104)
+script = ExtResource("14_6oefc")
+positions = Array[Vector2]([Vector2(175, 150), Vector2(425, 150), Vector2(300, 350)])
 
 [node name="HoldingHandler" type="Node" parent="."]
 script = ExtResource("23_p6hov")

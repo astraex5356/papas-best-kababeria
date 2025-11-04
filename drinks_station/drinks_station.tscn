@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bheb7evjpspe6"]
+[gd_scene load_steps=14 format=3 uid="uid://bheb7evjpspe6"]
 
 [ext_resource type="Texture2D" uid="uid://cq6pixfeopskb" path="res://drinks_station/assets/Background.png" id="1_dqg10"]
 [ext_resource type="PackedScene" uid="uid://cotskyv7td4e" path="res://drinks_station/tenents.tscn" id="2_mvdxp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ddo6m21mwpies" path="res://drinks_station/camera_2d.gd" id="6_kwk5w"]
 [ext_resource type="Script" uid="uid://rnwfofs3i0it" path="res://drinks_station/go_down.gd" id="7_kwk5w"]
 [ext_resource type="Texture2D" uid="uid://gkgy32kknexa" path="res://drinks_station/assets/DownButtom.png" id="7_y07b5"]
+[ext_resource type="Texture2D" uid="uid://cowutjrgsi01p" path="res://drinks_station/assets/UpButton.png" id="9_wcib1"]
 [ext_resource type="Script" uid="uid://ccv4l106u8ldq" path="res://drinks_station/kebab_holder.gd" id="10_1d4y2"]
 [ext_resource type="Texture2D" uid="uid://bkjh6ns6srl2" path="res://drinks_station/assets/beer-taps.png" id="10_6j5ia"]
 
@@ -50,20 +51,62 @@ me = ExtResource("2_mvdxp")
 camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/TenentsSlider")
 
+[node name="Tenents2" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("2_mvdxp")]
+position = Vector2(326, 1810)
+me = ExtResource("2_mvdxp")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/TenentsSlider")
+
+[node name="Tenents3" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("2_mvdxp")]
+position = Vector2(534, 1807)
+me = ExtResource("2_mvdxp")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/TenentsSlider")
+
 [node name="Belhaven" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("4_dvtf4")]
-position = Vector2(483, 1770)
+position = Vector2(742, 1794)
+me = ExtResource("4_dvtf4")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/BelhavenSlider")
+
+[node name="Belhaven2" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("4_dvtf4")]
+position = Vector2(980, 1789)
 me = ExtResource("4_dvtf4")
 camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/BelhavenSlider")
 
 [node name="West" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("5_aks2u")]
-position = Vector2(864, 1794)
+position = Vector2(1215, 1800)
+me = ExtResource("5_aks2u")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/WestSlider")
+
+[node name="West2" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("5_aks2u")]
+position = Vector2(1452.0001, 1796)
 me = ExtResource("5_aks2u")
 camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/WestSlider")
 
 [node name="Bru" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("6_54l7f")]
-position = Vector2(1337, 1893.9999)
+position = Vector2(1414.0001, 2371.9998)
+me = ExtResource("6_54l7f")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/BruSlider")
+
+[node name="Bru2" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("6_54l7f")]
+position = Vector2(1026, 2377.0002)
+me = ExtResource("6_54l7f")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/BruSlider")
+
+[node name="Bru3" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("6_54l7f")]
+position = Vector2(610, 2373)
+me = ExtResource("6_54l7f")
+camera = NodePath("../../Camera2D")
+drink_tap = NodePath("../../BeerTap/BruSlider")
+
+[node name="Bru4" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("6_54l7f")]
+position = Vector2(211.00003, 2370)
 me = ExtResource("6_54l7f")
 camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/BruSlider")
@@ -108,11 +151,11 @@ offset_right = 200.0
 offset_bottom = 1289.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("7_y07b5")
-texture_pressed = ExtResource("7_y07b5")
-texture_hover = ExtResource("7_y07b5")
-texture_disabled = ExtResource("7_y07b5")
-texture_focused = ExtResource("7_y07b5")
+texture_normal = ExtResource("9_wcib1")
+texture_pressed = ExtResource("9_wcib1")
+texture_hover = ExtResource("9_wcib1")
+texture_disabled = ExtResource("9_wcib1")
+texture_focused = ExtResource("9_wcib1")
 script = ExtResource("7_kwk5w")
 camera = NodePath("../Camera2D")
 

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
 size = Vector2(308.8133, 181.44803)
 
-[node name="draggable" type="Area2D"]
+[node name="draggable" type="Area2D" groups=["cooked_topping"]]
 scale = Vector2(0.48424998, 0.5091875)
 script = ExtResource("2_p7epd")
 item_type = "chicken"

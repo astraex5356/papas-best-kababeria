@@ -18,5 +18,5 @@ position = Vector2(29.382744, 29.074654)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_dtr5r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["cooked_topping"]]
 texture = ExtResource("1_isivt")
