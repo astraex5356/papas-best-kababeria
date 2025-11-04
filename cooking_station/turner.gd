@@ -1,4 +1,4 @@
-extends "res://cooking_station/drop_zone.gd"
+extends "res://drop_zone.gd"
 
 @export var lamb: PackedScene
 @export var pork: PackedScene
@@ -37,7 +37,6 @@ func _on_item_dropped(item: Draggable) -> String:
 		size = null
 		angle = null
 	current_item = item
-
 	current_item.visible = false
 	if current_item.item_type == "lamb_uncooked":
 		type = "lamb_uncooked"
