@@ -1,18 +1,19 @@
-[gd_scene load_steps=22 format=3 uid="uid://44vpewpbs465"]
+[gd_scene load_steps=25 format=3 uid="uid://44vpewpbs465"]
 
-[ext_resource type="PackedScene" uid="uid://da2oisa3a1chr" path="res://order_station.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cf5qbdb52o38i" path="res://cook_station.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://da2oisa3a1chr" path="res://orders/order_station.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bheb7evjpspe6" path="res://drinks_station/drinks_station.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bspg3f7073uow" path="res://build_station/build_station.tscn" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://8talxbms7gug" path="res://tab_bar.gd" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://clpkvhsvfc7jn" path="res://assets/Side Menu.png" id="5_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cine552thy3ef" path="res://assets/order.png" id="5_kek77"]
-[ext_resource type="Texture2D" uid="uid://b5a54r50ahgh8" path="res://assets/cook.png" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://b5a54r50ahgh8" path="res://assets/cook_icon.png" id="6_4c57u"]
 [ext_resource type="Texture2D" uid="uid://b7vyjrb5i2f0f" path="res://assets/Hang line.png" id="6_efxa6"]
-[ext_resource type="Texture2D" uid="uid://cfpy72b416qed" path="res://assets/assemble.png" id="7_efxa6"]
-[ext_resource type="Texture2D" uid="uid://dhapcgaowsiyt" path="res://assets/drink.png" id="8_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cfpy72b416qed" path="res://assets/assemble_icon.png" id="7_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cshrarq6lyq1r" path="res://assets/order_icon.png" id="7_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dhapcgaowsiyt" path="res://assets/drink_icon.png" id="8_dg77c"]
 [ext_resource type="Texture2D" uid="uid://cf61581i686rr" path="res://assets/FinishOrderButton.png" id="12_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://cobxhkhu17dhp" path="res://assets/FinishOrderDisabled.png" id="13_w48qg"]
+[ext_resource type="Script" uid="uid://ca22is0k5iepp" path="res://done_button.gd" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dnpgnku5ws7a" path="res://orders/order_item.tscn" id="15_vivmo"]
 
 [sub_resource type="Theme" id="Theme_4c57u"]
 
@@ -29,6 +30,12 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vivmo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cqfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
+size = Vector2(1600, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
+size = Vector2(384, 770)
 
 [node name="Node" type="Control"]
 layout_mode = 3
@@ -59,18 +66,15 @@ all_tabs_in_front = true
 [node name="Order Station" parent="TabContainer" instance=ExtResource("1_0xm2m")]
 layout_mode = 2
 
-[node name="Cook Station" parent="TabContainer" instance=ExtResource("2_h2yge")]
-visible = false
-layout_mode = 2
-
 [node name="Build Station" parent="TabContainer" instance=ExtResource("3_lquwl")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="DrinksStation" parent="TabContainer" instance=ExtResource("3_h2yge")]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 3
+metadata/_tab_index = 2
 
 [node name="UI Layer" type="CanvasLayer" parent="."]
 
@@ -82,6 +86,7 @@ anchor_bottom = 1.0
 offset_left = -400.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_4c57u")
 
 [node name="TextureRect2" type="TextureRect" parent="UI Layer"]
@@ -122,14 +127,14 @@ close_with_middle_mouse = false
 scrolling_enabled = false
 scroll_to_selected = false
 tab_count = 4
-tab_0/icon = ExtResource("5_kek77")
+tab_0/icon = ExtResource("7_w48qg")
 tab_1/icon = ExtResource("6_4c57u")
 tab_2/icon = ExtResource("7_efxa6")
 tab_3/icon = ExtResource("8_dg77c")
 script = ExtResource("4_1bvp3")
 tab_container = NodePath("../../TabContainer")
 
-[node name="TextureButton" type="TextureButton" parent="UI Layer"]
+[node name="DoneButton" type="TextureButton" parent="UI Layer"]
 offset_left = 1648.0
 offset_top = 992.0
 offset_right = 1961.0
@@ -137,3 +142,22 @@ offset_bottom = 1107.0
 disabled = true
 texture_normal = ExtResource("12_ycdy4")
 texture_disabled = ExtResource("13_w48qg")
+script = ExtResource("14_w48qg")
+
+[node name="TopBar" type="Area2D" parent="UI Layer"]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Layer/TopBar"]
+position = Vector2(800, 64)
+shape = SubResource("RectangleShape2D_vivmo")
+
+[node name="MainOrder" type="Area2D" parent="UI Layer"]
+position = Vector2(1800, 552)
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI Layer/MainOrder"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_w48qg")
+
+[node name="OrderItem" parent="UI Layer" instance=ExtResource("15_vivmo")]
+position = Vector2(1800, 550)

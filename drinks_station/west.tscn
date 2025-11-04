@@ -22,22 +22,23 @@ z_index = 1
 rotation = -3.1415925
 scale = Vector2(0.27, 0.27)
 script = ExtResource("1_lybjt")
+metadata/beer_type = "west"
 
 [node name="GlassBack" type="Sprite2D" parent="."]
-position = Vector2(-13.333318, 606.6666)
+position = Vector2(-13.333252, 665.9259)
 scale = Vector2(0.9999998, 0.9999998)
 texture = ExtResource("2_lybjt")
 
 [node name="GlassFront" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-13.333318, 606.6666)
+position = Vector2(-13.333252, 665.9259)
 scale = Vector2(0.9999998, 0.9999998)
 texture = ExtResource("3_t5jx5")
 
 [node name="BeerMask" type="Sprite2D" parent="."]
 clip_children = 1
 z_index = 1
-position = Vector2(-13.333318, 606.6665)
+position = Vector2(-13.333313, 665.9258)
 scale = Vector2(0.9999994, 0.9999994)
 texture = ExtResource("4_s6q0t")
 script = ExtResource("5_cfy7l")
@@ -54,7 +55,7 @@ texture = ExtResource("8_h77k7")
 region_rect = Rect2(-11.5, -8, 117.5, 71)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13.333312, 602)
+position = Vector2(-13.333313, 661.2593)
 shape = SubResource("RectangleShape2D_6j5ia")
 
 [node name="Knob" type="Area2D" parent="."]

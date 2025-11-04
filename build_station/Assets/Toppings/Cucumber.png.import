@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbwyq1lt1x8e1"
-path="res://.godot/imported/Order.png-93995f9194ba218eb5aa4ee4aa860ff5.ctex"
+uid="uid://8agmx8mug6e6"
+path="res://.godot/imported/Cucumber.png-7ef40bf5c87242a5ab29b8c85097310b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Order.png"
-dest_files=["res://.godot/imported/Order.png-93995f9194ba218eb5aa4ee4aa860ff5.ctex"]
+source_file="res://build_station/Assets/Toppings/Cucumber.png"
+dest_files=["res://.godot/imported/Cucumber.png-7ef40bf5c87242a5ab29b8c85097310b.ctex"]
 
 [params]
 

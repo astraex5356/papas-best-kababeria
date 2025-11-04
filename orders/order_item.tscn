@@ -1,0 +1,189 @@
+[gd_scene load_steps=23 format=3 uid="uid://dnpgnku5ws7a"]
+
+[ext_resource type="Texture2D" uid="uid://bbwyq1lt1x8e1" path="res://assets/Order.png" id="1_1ajuy"]
+[ext_resource type="Script" uid="uid://ch00dod3cg3pp" path="res://orders/order_item.gd" id="2_lilpu"]
+[ext_resource type="Texture2D" uid="uid://dsgclmi0hjfq4" path="res://build_station/Assets/Toppings/Chips.png" id="2_ss85l"]
+[ext_resource type="Texture2D" uid="uid://gl5l2251ltll" path="res://build_station/Assets/Toppings/Chili.png" id="3_lilpu"]
+[ext_resource type="Texture2D" uid="uid://cyx6pmhxo6764" path="res://build_station/Assets/Toppings/Lettuce.png" id="4_mjgf5"]
+[ext_resource type="Texture2D" uid="uid://8agmx8mug6e6" path="res://build_station/Assets/Toppings/Cucumber.png" id="5_7xl4l"]
+[ext_resource type="Texture2D" uid="uid://beslfcmdh586y" path="res://build_station/Assets/Toppings/Onion.png" id="6_0bumi"]
+[ext_resource type="Texture2D" uid="uid://duywmuc0h1n28" path="res://build_station/Assets/Sauces/chili_top.png" id="7_o1l3u"]
+[ext_resource type="Texture2D" uid="uid://c6htyhuarv3i5" path="res://build_station/Assets/Sauces/yogurt_top.png" id="8_wtw2w"]
+[ext_resource type="Texture2D" uid="uid://ca3ex0j51dakt" path="res://build_station/Assets/Sauces/ketchup_top.png" id="9_l2bda"]
+[ext_resource type="PackedScene" uid="uid://xs8ltswaqayx" path="res://drinks_station/bru.tscn" id="11_3q8ew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kcuih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ss85l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55qss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrt16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1api2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3kcy5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30bpa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8tm6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmvi0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3jaof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss85l"]
+size = Vector2(272, 688)
+
+[node name="Order" type="Area2D"]
+script = ExtResource("2_lilpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ajuy")
+
+[node name="CookedToppings" type="CenterContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -297.5
+offset_right = -7.0
+offset_bottom = -125.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="ItemList" parent="CookedToppings"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kcuih")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ss85l")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_55qss")
+theme_override_styles/hovered_selected = SubResource("StyleBoxEmpty_qrt16")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxEmpty_1api2")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_3kcy5")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_30bpa")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_8tm6j")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_rmvi0")
+allow_search = false
+auto_width = true
+auto_height = true
+wraparound_items = false
+item_count = 2
+max_columns = 2
+same_column_width = true
+icon_mode = 0
+icon_scale = 0.7
+item_0/icon = ExtResource("2_ss85l")
+item_0/selectable = false
+item_1/icon = ExtResource("3_lilpu")
+item_1/selectable = false
+
+[node name="Toppings" type="CenterContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -121.5
+offset_right = -7.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Items" type="ItemList" parent="Toppings"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kcuih")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3jaof")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_55qss")
+theme_override_styles/hovered_selected = SubResource("StyleBoxEmpty_qrt16")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxEmpty_1api2")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_3kcy5")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_30bpa")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_8tm6j")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_rmvi0")
+allow_search = false
+auto_width = true
+auto_height = true
+wraparound_items = false
+item_count = 4
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+icon_scale = 0.5
+item_0/text = "Lettuce"
+item_0/icon = ExtResource("4_mjgf5")
+item_0/selectable = false
+item_1/text = "Chilis"
+item_1/icon = ExtResource("3_lilpu")
+item_1/selectable = false
+item_2/text = "Lettuce"
+item_2/icon = ExtResource("5_7xl4l")
+item_3/text = "Onion"
+item_3/icon = ExtResource("6_0bumi")
+
+[node name="Sauce" type="CenterContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 26.5
+offset_right = -7.0
+offset_bottom = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Items" type="ItemList" parent="Sauce"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kcuih")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3jaof")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_55qss")
+theme_override_styles/hovered_selected = SubResource("StyleBoxEmpty_qrt16")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxEmpty_1api2")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_3kcy5")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_30bpa")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_8tm6j")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_rmvi0")
+allow_search = false
+auto_width = true
+auto_height = true
+wraparound_items = false
+item_count = 3
+max_columns = 3
+same_column_width = true
+icon_mode = 0
+icon_scale = 0.5
+item_0/text = "Lettuce"
+item_0/icon = ExtResource("7_o1l3u")
+item_0/selectable = false
+item_1/text = "Chilis"
+item_1/icon = ExtResource("8_wtw2w")
+item_1/selectable = false
+item_2/text = "Lettuce"
+item_2/icon = ExtResource("9_l2bda")
+
+[node name="Drink" type="CenterContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 175.5
+offset_right = -7.0
+offset_bottom = 342.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bru" parent="Drink" instance=ExtResource("11_3q8ew")]
+position = Vector2(135.99998, 142.99998)
+scale = Vector2(0.12, 0.12)
+beer_procress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ss85l")
+debug_color = Color(0.89806205, 0.00018732488, 0.77171916, 0.41960785)

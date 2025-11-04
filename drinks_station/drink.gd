@@ -9,6 +9,8 @@ var state = State.Shelf
 @export var head_portion: float = 0.0
 @export var beer_procress: float = 0.0
 
+@onready var done_button = get_node("/root/Node/UI Layer/DoneButton")
+
 var head_amount = 0
 
 @export var camera: Camera2D
@@ -22,9 +24,10 @@ var head_amount = 0
 @onready var collider: CollisionShape2D = $CollisionShape2D
 @onready var slider_radius: float = collider.shape.size.y + 100
 
+var in_current_slot = false
+
 func _ready() -> void:
 	knob.input_event.connect(_knob_input)
-
 	
 var dragging := false
 var moving := false
@@ -47,17 +50,34 @@ func _process(delta: float) -> void:
 			moving = false
 			
 			stopped_moving()
+		
 			
 func stopped_moving():
 	for area in get_overlapping_areas():
+		print(area.name)
 		if area.name == "Sink":
+			
+			if in_current_slot:
+				done_button.current_drink = null
+			
 			queue_free()
 			
-			drink_tap.editable = false
-			drink_tap.visible = false
+			return
+		if area.name == "ServeHolder":
+			scale /= Vector2(1.5, 1.5)
+			in_current_slot = true
+			position = Vector2(1275, 1200 - collider.shape.size.y * collider.global_scale.y)
+			
+			done_button.current_drink = self
 			
 			return
-			
+	
+	drink_tap.editable = not in_current_slot
+	drink_tap.visible = not in_current_slot
+		
+	knob.input_pickable = not in_current_slot
+	knob.visible = not in_current_slot
+	
 	position = last_pos
 	
 func render_beer(delta: float):
@@ -109,6 +129,9 @@ func _input_event(_viewport, event, _shape_idx):
 		rotation = 0
 		
 		last_pos = position
+		
+		drink_tap.editable = false
+		drink_tap.visible = false
 		
 		knob.input_pickable = false
 		knob.visible = false

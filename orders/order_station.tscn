@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://da2oisa3a1chr"]
+
+[node name="Order Station" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_tab_index = 0

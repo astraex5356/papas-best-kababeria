@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bheb7evjpspe6"]
+[gd_scene load_steps=13 format=3 uid="uid://bheb7evjpspe6"]
 
 [ext_resource type="Texture2D" uid="uid://cq6pixfeopskb" path="res://drinks_station/assets/Background.png" id="1_dqg10"]
 [ext_resource type="PackedScene" uid="uid://cotskyv7td4e" path="res://drinks_station/tenents.tscn" id="2_mvdxp"]
@@ -8,10 +8,14 @@
 [ext_resource type="Script" uid="uid://ddo6m21mwpies" path="res://drinks_station/camera_2d.gd" id="6_kwk5w"]
 [ext_resource type="Script" uid="uid://rnwfofs3i0it" path="res://drinks_station/go_down.gd" id="7_kwk5w"]
 [ext_resource type="Texture2D" uid="uid://gkgy32kknexa" path="res://drinks_station/assets/DownButtom.png" id="7_y07b5"]
+[ext_resource type="Script" uid="uid://ccv4l106u8ldq" path="res://drinks_station/kebab_holder.gd" id="10_1d4y2"]
 [ext_resource type="Texture2D" uid="uid://bkjh6ns6srl2" path="res://drinks_station/assets/beer-taps.png" id="10_6j5ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aks2u"]
-size = Vector2(285.5, 565)
+size = Vector2(283.75, 565)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d4y2"]
+size = Vector2(148, 160)
 
 [node name="DrinksStation" type="Control"]
 layout_mode = 3
@@ -33,6 +37,7 @@ anchor_right = 1.0
 offset_bottom = 2500.0
 grow_horizontal = 2
 texture = ExtResource("1_dqg10")
+stretch_mode = 2
 
 [node name="Glasses" type="Control" parent="."]
 anchors_preset = 0
@@ -58,7 +63,7 @@ camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/WestSlider")
 
 [node name="Bru" parent="Glasses" node_paths=PackedStringArray("camera", "drink_tap") instance=ExtResource("6_54l7f")]
-position = Vector2(1337.9999, 1856.9999)
+position = Vector2(1337, 1893.9999)
 me = ExtResource("6_54l7f")
 camera = NodePath("../../Camera2D")
 drink_tap = NodePath("../../BeerTap/BruSlider")
@@ -168,3 +173,12 @@ scrollable = false
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sink"]
 position = Vector2(143.25, 964.5)
 shape = SubResource("RectangleShape2D_aks2u")
+
+[node name="ServeHolder" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="ServeHolder"]
+position = Vector2(1261, 1147)
+shape = SubResource("RectangleShape2D_1d4y2")
+
+[node name="KebabHolder" type="Node2D" parent="."]
+script = ExtResource("10_1d4y2")

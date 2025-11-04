@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var color: Color
+@export var sauce_name: String
 
 @onready var held_handler = get_node("/root/Node/TabContainer/Build Station/HoldingHandler")
 
@@ -20,6 +21,10 @@ var current_line = null
 
 func create_sauce_line(w):
 	var line = Line2D.new()
+	
+	line.set_meta("sauce_name", sauce_name)
+	line.add_to_group("sauce")
+	
 	w.add_child(line)
 	line.width = 20
 	line.default_color = color

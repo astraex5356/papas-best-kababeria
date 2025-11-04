@@ -3,6 +3,7 @@ extends Area2D
 @export var bottle: CompressedTexture2D
 @export var top: CompressedTexture2D
 @export var sauce_color: Color
+@export var sauce_name: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,8 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 		$Sprite2D.visible = false
 		
 		var b = load("res://build_station/held_bottle.tscn").instantiate()
+		
+		b.sauce_name = sauce_name
 		
 		b.get_node("Sprite2D").texture = bottle
 		

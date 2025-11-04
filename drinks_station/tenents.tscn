@@ -22,6 +22,7 @@ z_index = 1
 rotation = -3.1415925
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_j4bo8")
+metadata/beer_type = "tenents"
 
 [node name="GlassBack" type="Sprite2D" parent="."]
 position = Vector2(-13.333318, 606.6666)

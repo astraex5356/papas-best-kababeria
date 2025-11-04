@@ -7,11 +7,11 @@
 radius = 159.99998
 
 [node name="Wrap" type="Area2D"]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_3xgo2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.67, 0.67)
 texture = ExtResource("1_b6xyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
