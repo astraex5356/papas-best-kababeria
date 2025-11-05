@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://iosb2w0fsbmo"]
+[gd_scene load_steps=11 format=3 uid="uid://ckr6jjc4mpod5"]
 
 [ext_resource type="PackedScene" uid="uid://d3658trpgufsd" path="res://potato.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bs4d6oqw6gxe0" path="res://chipFryer.tscn" id="1_h2yge"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://iosb2w0fsbmo"]
 
-[ext_resource type="PackedScene" uid="uid://d3658trpgufsd" path="res://cooking_station/chips/potato.tscn" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bs4d6oqw6gxe0" path="res://cooking_station/chips/chipFryer.tscn" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bs4d6oqw6gxe0" path="res://cooking_station/chips/chipFryer.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://wd6v4j0gotbv" path="res://cooking_station/turner.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://bxcm0f7pr43q5" path="res://cooking_station/beef/raw_beef.tscn" id="6_4c57u"]

@@ -1,4 +1,4 @@
-extends "res://drop_zone.gd"
+extends "res://cooking_station/drop_zone.gd"
 
 @export var lamb: PackedScene
 @export var pork: PackedScene

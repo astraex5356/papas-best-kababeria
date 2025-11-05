@@ -8,6 +8,8 @@ var dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 var start_position: Vector2 = Vector2.ZERO
 
+@export var disabled = false
+
 @export var on_spawn_drag: bool
 
 var first_use = true
@@ -29,7 +31,7 @@ func _process(_delta: float) -> void:
 		dragging = false
 	
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not disabled:
 		if event.pressed:
 			dragging = true
 			drag_offset = get_local_mouse_position()

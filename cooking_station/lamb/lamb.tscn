@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtr5r"]
 size = Vector2(96.96971, 63.999977)
 
-[node name="draggable" type="Area2D"]
+[node name="draggable" type="Area2D" groups=["cooked_topping"]]
 scale = Vector2(1.65, 1)
 script = ExtResource("2_hidjo")
 item_type = "lamb_uncooked"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["cooked_topping"]]
 position = Vector2(5.7798445e-07, 9.536743e-07)
 scale = Vector2(0.99999994, 1.0000004)
 shape = SubResource("RectangleShape2D_dtr5r")
